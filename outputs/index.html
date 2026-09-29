@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tateti clásico para dos jugadores en el navegador." />
+  <title>Tateti | Partida clásica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-card" aria-labelledby="game-title">
+      <header class="game-header">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <div>
+            <p class="eyebrow">Partida local · 2 jugadores</p>
+            <h1 id="game-title">Tateti</h1>
+          </div>
+        </div>
+        <button class="icon-button" id="reset-header" type="button" aria-label="Reiniciar partida" title="Reiniciar partida">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.7-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.7 2M20 19v-4h-4" /></svg>
+        </button>
+      </header>
+
+      <div class="scoreboard" aria-label="Marcador">
+        <article class="score-card score-x is-active" id="score-x">
+          <div class="score-card-top"><span class="player-symbol">X</span><span class="player-label">Jugador 1</span></div>
+          <strong class="score-value" id="score-value-x">0</strong>
+        </article>
+        <div class="score-divider" aria-hidden="true"><span>vs</span></div>
+        <article class="score-card score-o" id="score-o">
+          <div class="score-card-top"><span class="player-symbol">O</span><span class="player-label">Jugador 2</span></div>
+          <strong class="score-value" id="score-value-o">0</strong>
+        </article>
+      </div>
+
+      <div class="status-row" aria-live="polite">
+        <span class="status-dot" id="status-dot"></span>
+        <p id="status-message">Turno de Jugador 1</p>
+        <span class="round-count" id="round-count">Ronda 1</span>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board" role="grid" aria-label="Tablero de Tateti">
+          <button class="cell" type="button" role="gridcell" data-index="0" aria-label="Fila 1, columna 1, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="1" aria-label="Fila 1, columna 2, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="2" aria-label="Fila 1, columna 3, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="3" aria-label="Fila 2, columna 1, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="4" aria-label="Fila 2, columna 2, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="5" aria-label="Fila 2, columna 3, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="6" aria-label="Fila 3, columna 1, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="7" aria-label="Fila 3, columna 2, vacía"></button>
+          <button class="cell" type="button" role="gridcell" data-index="8" aria-label="Fila 3, columna 3, vacía"></button>
+          <div class="winning-line" id="winning-line" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <footer class="game-footer">
+        <p class="hint"><span class="hint-icon" aria-hidden="true">↗</span> Alineá tres símbolos para ganar</p>
+        <button class="new-game-button" id="new-game" type="button">Nueva partida <span aria-hidden="true">↗</span></button>
+      </footer>
+    </section>
+    <p class="footer-note">Hecho para jugar en la misma pantalla</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
